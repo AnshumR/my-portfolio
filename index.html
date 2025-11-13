@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anshum Rankawat | PhD Candidate & AI Reliability Engineer</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles for professional academic look */
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* Sticky navigation for desktop, better mobile UX */
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+        .section-title {
+            position: relative;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background-color: #06b6d4; /* Tailwind cyan-500 */
+            border-radius: 9999px;
+        }
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <!-- Tailwind Config for custom colors/theme -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-blue': '#1e40af', /* deep blue */
+                        'primary-teal': '#06b6d4', /* cyan-500 for accent */
+                    },
+                }
+            }
+        }
+    </script>
+
+    <!-- Navigation Bar (Sticky and Responsive) -->
+    <header class="sticky-nav bg-white shadow-md border-b border-gray-100">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#home" class="text-2xl font-extrabold text-primary-blue hover:text-primary-teal transition duration-300">
+                    Anshum R.
+                </a>
+                <div class="hidden sm:flex space-x-6 text-sm font-medium">
+                    <a href="#about" class="text-gray-600 hover:text-primary-teal transition duration-300">About</a>
+                    <a href="#research" class="text-gray-600 hover:text-primary-teal transition duration-300">Research</a>
+                    <a href="#projects" class="text-gray-600 hover:text-primary-teal transition duration-300">Projects</a>
+                    <a href="#publications" class="text-gray-600 hover:text-primary-teal transition duration-300">Publications</a>
+                    <a href="#contact" class="px-3 py-1 bg-primary-blue text-white rounded-full hover:bg-primary-teal transition duration-300">Contact</a>
+                </div>
+                <!-- Simple Mobile Menu Placeholder (Not fully functional dropdown but satisfies touch-friendly requirement) -->
+                <div class="sm:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-primary-teal focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+
+        <!-- 1. Hero / Header Section -->
+        <section id="home" class="py-16 md:py-24 border-b border-gray-200">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight">
+                    Anshum Rankawat
+                </h1>
+                <p class="mt-4 text-2xl font-medium text-primary-blue">
+                    PhD Candidate & AI Reliability Engineer
+                </p>
+                <p class="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
+                    Working at the intersection of <span class="text-primary-teal font-semibold">Trustworthy AI, Behavioral Meta-Learning, and Reliability-Aware Autonomous Systems</span>, with a commitment to responsible innovation and community-driven education.
+                </p>
+            </div>
+        </section>
+
+        <!-- 2. About Me Section -->
+        <section id="about" class="py-16 md:py-20 border-b border-gray-200">
+            <h2 class="section-title text-gray-900">About Me</h2>
+            <div class="space-y-6 text-lg text-gray-700">
+                <p>
+                    I am a researcher and engineer working at the intersection of Trustworthy AI, Behavioral Meta-Learning, and Reliability-Aware Autonomous Systems. My work integrates applied machine learning, AI reliability, and safety-centric design for autonomous aerial systems. I am equally committed to community-driven education, having taught and mentored learners across rural, urban, and underserved regions.
+                </p>
+                <p>
+                    I believe in AI systems that are not only performant but also <span class="font-semibold text-primary-blue">reliable, interpretable, and behaviourally stable.</span> My research and outreach both emphasize human-centered thinking, continuous learning, and responsible innovation.
+                </p>
+            </div>
+        </section>
+
+        <!-- 3. Research Focus Areas Section -->
+        <section id="research" class="py-16 md:py-20 border-b border-gray-200">
+            <h2 class="section-title text-gray-900">Research Focus Areas</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-primary-blue">Primary Research Themes</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+                        <li>Trustworthy AI & Reliability-Aware Learning</li>
+                        <li>Behavioral Meta-Learning & Adaptive Learning Dynamics</li>
+                        <li>Uncertainty Quantification & Model Calibration</li>
+                        <li>Safe UAV Autonomy & Path Planning</li>
+                        <li>Robust Machine Learning & Optimization</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-primary-blue">Complementary Interests</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+                        <li>Learning dynamics and optimization behavior</li>
+                        <li>High-dimensional statistical modeling</li>
+                        <li>AI safety and reliability assessment</li>
+                        <li>Human-centered ML applications</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Research Projects Section -->
+        <section id="projects" class="py-16 md:py-20 border-b border-gray-200">
+            <h2 class="section-title text-gray-900">Selected Research Projects</h2>
+            <div class="grid gap-8 lg:grid-cols-2">
+
+                <!-- Project Card 1: Behavioral Reliability in Learning Systems (PGAR) -->
+                <div class="project-card bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-red-500 bg-red-100 px-3 py-1 rounded-full">Confidential / IP Restricted</span>
+                    <h3 class="text-2xl font-bold mt-3 text-gray-900">Behavioral Reliability in Learning Systems (PGAR)</h3>
+                    <p class="text-sm text-gray-500 mt-1">Independent Research (2024–present)</p>
+                    <div class="mt-4 space-y-2 text-gray-600">
+                        <p class="font-medium text-primary-blue">PGAR is a behavioral meta-learning concept focusing on how learning systems adjust their behavior over time.</p>
+                        <ul class="list-disc list-inside text-sm ml-4 space-y-1">
+                            <li>How models behave under shifting uncertainty</li>
+                            <li>How calibration and confidence drift during learning</li>
+                            <li>How supervisory behavioral cues support more stable adaptation</li>
+                        </ul>
+                        <p class="text-sm italic font-semibold pt-2">Note: Only conceptual information is shared publicly to comply with journal and IP restrictions. No formulas, architectures, algorithms, or results are disclosed publicly.</p>
+                    </div>
+                    <div class="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-sm">
+                        <span class="font-semibold text-gray-700">Status:</span> Under Review (IEEE Transactions on Artificial Intelligence)
+                        <span class="font-semibold text-gray-700">Patent:</span> Indian Provisional Patent No. 202511103841 (2025)
+                    </div>
+                </div>
+
+                <!-- Project Card 2: UAV Reliability & Autonomous Path Planning -->
+                <div class="project-card bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-primary-teal bg-teal-100 px-3 py-1 rounded-full">Defense & Autonomy</span>
+                    <h3 class="text-2xl font-bold mt-3 text-gray-900">UAV Reliability & Autonomous Path Planning</h3>
+                    <p class="text-sm text-gray-500 mt-1">DRDO–ITR Chandipur (2024–2025)</p>
+                    <div class="mt-4 space-y-2 text-gray-600">
+                        <p>Worked on safety-focused UAV autonomy research involving:</p>
+                        <ul class="list-disc list-inside text-sm ml-4 space-y-1">
+                            <li>Dynamic obstacle avoidance and real-time collision prediction</li>
+                            <li>Reliability-aware guided RRT enhancements</li>
+                            <li>Simulation-based validation for autonomous UAV missions</li>
+                        </ul>
+                    </div>
+                    <div class="mt-4 text-sm">
+                        <a href="https://www.youtube.com/watch?v=kv7Jp1ojBeM" target="_blank" class="flex items-center text-primary-blue hover:text-primary-teal font-medium transition duration-300">
+                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm6.5 4.5l5 3-5 3v-6z"></path></svg>
+                            Conference Talk: IEEE ICORT 2025 Presentation (Video)
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project Card 3: Applied Data Reliability & Streaming Analytics -->
+                <div class="project-card bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-indigo-500 bg-indigo-100 px-3 py-1 rounded-full">Data Engineering</span>
+                    <h3 class="text-2xl font-bold mt-3 text-gray-900">Applied Data Reliability & Streaming Analytics</h3>
+                    <p class="text-sm text-gray-500 mt-1">Atom Build / SonyLIV Asia Cup 2025</p>
+                    <div class="mt-4 space-y-2 text-gray-600">
+                        <p>Involved in high-throughput pipelines focusing on reliability and traceability layers:</p>
+                        <ul class="list-disc list-inside text-sm ml-4 space-y-1">
+                            <li>Airflow & AWS-based data engineering</li>
+                            <li>Real-time ad-performance monitoring</li>
+                            <li>Ensuring data consistency during peak-traffic sports events</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Project Card 4: Personal Data Science Project – Sleep Analysis -->
+                <div class="project-card bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-green-500 bg-green-100 px-3 py-1 rounded-full">Human-Centered ML</span>
+                    <h3 class="text-2xl font-bold mt-3 text-gray-900">Personal Data Science Project – Sleep Analysis</h3>
+                    <p class="text-sm text-gray-500 mt-1">Personal Project</p>
+                    <div class="mt-4 space-y-2 text-gray-600">
+                        <p>Analyzing self-tracked sleep patterns to understand behavioral trends affecting rest quality.</p>
+                        <ul class="list-disc list-inside text-sm ml-4 space-y-1">
+                            <li>Time-series exploration & Visualization of sleep consistency</li>
+                            <li>Correlation insights for data-driven habit improvements</li>
+                        </ul>
+                    </div>
+                    <div class="mt-4 text-sm">
+                        <a href="https://www.kaggle.com/code/anshumrankawat/sleep-analysis" target="_blank" class="flex items-center text-primary-blue hover:text-primary-teal font-medium transition duration-300">
+                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 3a1 1 0 00-1 1v4a1 1 0 002 0V4a1 1 0 00-1-1zM5 9a1 1 0 110-2h10a1 1 0 110 2H5z" clip-rule="evenodd"></path></svg>
+                            View on Kaggle
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 5. Teaching & Outreach Section -->
+        <section id="outreach" class="py-16 md:py-20 border-b border-gray-200">
+            <h2 class="section-title text-gray-900">Teaching & Educational Outreach</h2>
+            <div class="grid gap-8 md:grid-cols-2">
+
+                <!-- Outreach 1: Child Safety Awareness Workshop -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+                    <h3 class="text-xl font-bold text-gray-900">Child Safety Awareness Workshop – "Good Touch & Bad Touch"</h3>
+                    <p class="text-sm text-gray-500 mt-1">Structured workshop for school children.</p>
+                    <ul class="list-disc list-inside text-sm text-gray-600 mt-3 ml-4 space-y-1">
+                        <li>Emphasizes visual and age-appropriate explanation.</li>
+                        <li>Focuses on trust-building, sensitivity, and responsible educational outreach.</li>
+                    </ul>
+                    <a href="https://www.youtube.com/watch?v=85XvvjZILhA" target="_blank" class="mt-4 inline-flex items-center text-primary-blue hover:text-primary-teal text-sm font-medium transition duration-300">
+                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M2 6a2 2 0 012-2h12a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zm8.5 4.5l5-3-5-3v6z"></path></svg>
+                        View Workshop Video
+                    </a>
+                </div>
+
+                <!-- Outreach 2: Nitaya Kalyan – Educational Initiative (Founder) -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+                    <h3 class="text-xl font-bold text-gray-900">Nitaya Kalyan – Educational Initiative (Founder)</h3>
+                    <p class="text-sm text-gray-500 mt-1">A volunteer-led platform for accessible education.</p>
+                    <ul class="list-disc list-inside text-sm text-gray-600 mt-3 ml-4 space-y-1">
+                        <li>Conducts STEM learning and foundational education sessions.</li>
+                        <li>Runs communication skills, confidence-building, and creative learning modules.</li>
+                    </ul>
+                    <p class="mt-4 text-xs italic text-gray-500">Reflects long-term commitment to accessible education.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 6. Publications & Patent Section -->
+        <section id="publications" class="py-16 md:py-20 border-b border-gray-200">
+            <h2 class="section-title text-gray-900">Publications & Intellectual Property</h2>
+            <div class="space-y-8">
+                <!-- Patent -->
+                <div class="border-b pb-4">
+                    <h3 class="text-xl font-bold text-red-600">Patent</h3>
+                    <p class="mt-2 text-lg text-gray-800 font-semibold">
+                        Behavioral Reliability in Learning Systems (PGAR)
+                    </p>
+                    <p class="text-sm text-gray-600">Provisional Patent, 2025 (Indian Provisional Patent No. 202511103841)</p>
+                </div>
+
+                <!-- Journal/Submitted -->
+                <div class="border-b pb-4">
+                    <h3 class="text-xl font-bold text-primary-blue">Journal Submission</h3>
+                    <p class="mt-2 text-lg text-gray-800 font-semibold">
+                        Parent-Guided Adaptive Reliability (PGAR)
+                    </p>
+                    <p class="text-sm text-gray-600">Accepted & Under Review at IEEE Transactions on Artificial Intelligence (Title only)</p>
+                </div>
+
+                <!-- Published Papers -->
+                <div>
+                    <h3 class="text-xl font-bold text-primary-teal">Published Papers (Peer-Reviewed)</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li class="text-gray-700">
+                            <span class="font-medium">Flight Path Planning for UAVs in Environments with Moving Obstacles</span> – IEEE ICORT 2025
+                            <a href="https://doi.org/10.1109/ICORT64008.2025.11115178" target="_blank" class="ml-2 text-xs text-primary-teal hover:underline">(DOI Link)</a>
+                        </li>
+                        <li class="text-gray-700">
+                            <span class="font-medium">Flight Path Planning for UAVs Using Guided RRT Algorithm</span> – IEEE ICISSGT 2024
+                            <a href="https://doi.org/10.1109/ICISSGT58904.2024.00020" target="_blank" class="ml-2 text-xs text-primary-teal hover:underline">(DOI Link)</a>
+                        </li>
+                        <li class="text-gray-700">
+                            <span class="font-medium">Flight Path Planning for UAVs Using Machine Learning-Guided RRT Algorithms</span> – Accepted at NCEPST 2025 (IJIRT, In Press)
+                            <span class="ml-2 text-xs text-gray-500">(Accepted, In Press)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 7. Book & Leadership Section (Combined for flow) -->
+        <section class="py-16 md:py-20 border-b border-gray-200">
+            <h2 class="section-title text-gray-900">Monographs & Leadership</h2>
+            <div class="grid gap-8 lg:grid-cols-2">
+
+                <!-- Book -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+                    <h3 class="text-xl font-bold text-gray-900">Teach for Change: Volunteers Can Make a Difference (2023)</h3>
+                    <p class="text-sm text-gray-500 mt-1">A monograph on community-led education and volunteer impact.</p>
+                    <ul class="list-disc list-inside text-sm text-gray-600 mt-3 ml-4 space-y-1">
+                        <li>Focuses on building confidence, safety awareness, curiosity, and empathy.</li>
+                        <li>Complements teaching and community engagement philosophy.</li>
+                    </ul>
+                    <a href="https://www.amazon.in/Teach-change-Volunteers-make-diffrence-ebook/dp/B0C2Q756QK" target="_blank" class="mt-4 inline-flex items-center text-primary-blue hover:text-primary-teal text-sm font-medium transition duration-300">
+                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.26 4.26A2 2 0 007.91 3.91l-3 3a2 2 0 00.41 2.82l.82.82a2 2 0 002.82-.41l3-3a2 2 0 00-.41-2.82l-.82-.82zM15.41 12.12l-3.3-3.3a2 2 0 00-2.83 0l-3 3a2 2 0 000 2.83l3.3 3.3a2 2 0 002.83 0l3-3a2 2 0 000-2.83z"></path></svg>
+                        View on Amazon
+                    </a>
+                </div>
+
+                <!-- Leadership/Talk -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+                    <h3 class="text-xl font-bold text-gray-900">Journey of a Toastmaster – Leadership & Growth</h3>
+                    <p class="text-sm text-gray-500 mt-1">Podcast-style conversation covering leadership and communication.</p>
+                    <ul class="list-disc list-inside text-sm text-gray-600 mt-3 ml-4 space-y-1">
+                        <li>Structured thinking through Toastmasters practice.</li>
+                        <li>Mentoring learners and teams; confident public-speaking mindset.</li>
+                    </ul>
+                    <a href="https://www.youtube.com/watch?v=7JJ3uIyGQ8A" target="_blank" class="mt-4 inline-flex items-center text-primary-blue hover:text-primary-teal text-sm font-medium transition duration-300">
+                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm6.5 4.5l5 3-5 3v-6z"></path></svg>
+                        Watch Interview Video
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Technical Skills Section -->
+        <section id="skills" class="py-16 md:py-20 border-b border-gray-200">
+            <h2 class="section-title text-gray-900">Technical Skills</h2>
+            <div class="flex flex-wrap gap-3">
+                <!-- Data from section 9 -->
+                <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full text-sm font-medium hover:bg-primary-teal hover:text-white transition duration-300">Python, PyTorch, TensorFlow</span>
+                <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full text-sm font-medium hover:bg-primary-teal hover:text-white transition duration-300">Machine Learning, Meta-Learning, Model Calibration</span>
+                <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full text-sm font-medium hover:bg-primary-teal hover:text-white transition duration-300">Uncertainty Quantification, Reliability Analysis</span>
+                <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full text-sm font-medium hover:bg-primary-teal hover:text-white transition duration-300">Apache Airflow, AWS Services, Data Pipelines</span>
+                <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full text-sm font-medium hover:bg-primary-teal hover:text-white transition duration-300">Applied Statistics, Optimization Methods</span>
+                <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full text-sm font-medium hover:bg-primary-teal hover:text-white transition duration-300">UAV Simulation & Modeling Tools</span>
+            </div>
+        </section>
+
+        <!-- 9. Contact Section -->
+        <section id="contact" class="py-16 md:py-20">
+            <h2 class="section-title text-gray-900">Get in Touch</h2>
+            <div class="grid md:grid-cols-3 gap-8 text-center md:text-left">
+                <!-- Email -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+                    <h3 class="text-lg font-semibold text-primary-blue">Email</h3>
+                    <p class="mt-1 text-gray-700">anshumiaf@gmail.com</p>
+                    <a href="mailto:anshumiaf@gmail.com" class="text-sm text-primary-teal hover:underline">Send an Email</a>
+                </div>
+                <!-- LinkedIn -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+                    <h3 class="text-lg font-semibold text-primary-blue">LinkedIn</h3>
+                    <p class="mt-1 text-gray-700">Anshum Rankawat</p>
+                    <a href="https://www.linkedin.com/in/anshum-rankawat" target="_blank" class="text-sm text-primary-teal hover:underline">Connect</a>
+                </div>
+                <!-- Kaggle -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+                    <h3 class="text-lg font-semibold text-primary-blue">Kaggle</h3>
+                    <p class="mt-1 text-gray-700">anshumrankawat</p>
+                    <a href="https://www.kaggle.com/anshumrankawat" target="_blank" class="text-sm text-primary-teal hover:underline">View Projects</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
+            <p class="text-sm text-gray-400">
+                Anshum Rankawat Portfolio | PhD Candidate & AI Reliability Engineer
+            </p>
+        </div>
+    </footer>
+
+    <!-- Simple JS for Mobile Menu Scroll (Enhances responsiveness) -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Basic mobile menu toggle logic (hides/shows menu links when button is clicked)
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const navLinks = document.querySelector('nav > div > div:not(.sm\\:hidden)');
+
+        if (mobileMenuButton && navLinks) {
+            mobileMenuButton.addEventListener('click', () => {
+                navLinks.classList.toggle('hidden');
+                navLinks.classList.toggle('flex');
+                navLinks.classList.toggle('flex-col');
+                navLinks.classList.toggle('absolute');
+                navLinks.classList.toggle('top-16');
+                navLinks.classList.toggle('left-0');
+                navLinks.classList.toggle('w-full');
+                navLinks.classList.toggle('bg-white');
+                navLinks.classList.toggle('p-4');
+                navLinks.classList.toggle('shadow-lg');
+            });
+        }
+    </script>
+</body>
+</html>
