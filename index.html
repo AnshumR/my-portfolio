@@ -3,654 +3,547 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Anshum Rankawat — Trustworthy AI, uncertainty & calibration, reliability-aware autonomy (UAVs). Publications, projects, and outreach." />
   <title>Anshum Rankawat | Trustworthy AI & Reliability-Aware Autonomy</title>
 
-  <!-- Tailwind -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 
   <style>
-    body { font-family: "Inter", sans-serif; scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
     .sticky-nav { position: sticky; top: 0; z-index: 50; }
+
     .section-title {
       position: relative;
-      padding-bottom: 0.6rem;
-      margin-bottom: 1.4rem;
+      padding-bottom: 0.55rem;
+      margin-bottom: 1.6rem;
       font-size: 1.55rem;
       font-weight: 800;
       letter-spacing: -0.02em;
     }
     .section-title::after {
-      content: "";
+      content: '';
       position: absolute;
       left: 0;
       bottom: 0;
-      width: 56px;
+      width: 62px;
       height: 3px;
       background: linear-gradient(90deg, #06b6d4, #1e40af);
       border-radius: 9999px;
     }
-    .card-hover {
+
+    .project-card {
       transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
     }
-    .card-hover:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 14px 22px -10px rgba(2, 6, 23, 0.15);
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 26px -18px rgba(15, 23, 42, 0.35);
       border-color: rgba(6, 182, 212, 0.35);
     }
-    /* better anchor position with sticky nav */
+
     section { scroll-margin-top: 90px; }
   </style>
+</head>
 
+<body class="bg-gradient-to-b from-slate-50 via-white to-slate-50 text-gray-800 antialiased">
+
+  <!-- Tailwind theme -->
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            "primary-blue": "#1e40af",
-            "primary-teal": "#06b6d4",
-            "ink": "#0f172a"
+            'primary-blue': '#1e40af',
+            'primary-teal': '#06b6d4',
           },
           boxShadow: {
-            soft: "0 10px 25px -15px rgba(2,6,23,0.25)"
+            soft: '0 10px 25px -15px rgba(2,6,23,0.25)'
           }
         }
       }
     }
   </script>
-</head>
-
-<body class="bg-gradient-to-b from-slate-50 via-white to-slate-50 text-slate-800 antialiased">
 
   <!-- NAV -->
-  <header class="sticky-nav bg-white/75 backdrop-blur-md border-b border-slate-100 shadow-sm">
+  <header class="sticky-nav bg-white/75 backdrop-blur-md shadow-sm border-b border-gray-100">
     <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
       <div class="flex justify-between items-center">
-        <a href="#home" class="text-2xl font-extrabold text-primary-blue hover:text-primary-teal transition">
+        <a href="#home" class="text-2xl font-extrabold text-primary-blue hover:text-primary-teal transition duration-300">
           Anshum R.
         </a>
 
-        <!-- Desktop Links -->
-        <div class="hidden sm:flex items-center space-x-6 text-sm font-semibold">
-          <a href="#about" class="text-slate-600 hover:text-primary-teal transition">About</a>
-          <a href="#research" class="text-slate-600 hover:text-primary-teal transition">Research</a>
-          <a href="#projects" class="text-slate-600 hover:text-primary-teal transition">Projects</a>
-          <a href="#publications" class="text-slate-600 hover:text-primary-teal transition">Publications</a>
-          <a href="#experience" class="text-slate-600 hover:text-primary-teal transition">Experience</a>
-          <a href="#outreach" class="text-slate-600 hover:text-primary-teal transition">Outreach</a>
-          <a href="#contact" class="px-3 py-1.5 bg-primary-blue text-white rounded-full hover:bg-primary-teal transition shadow-soft">
-            Contact
-          </a>
+        <div class="hidden sm:flex space-x-6 text-sm font-medium">
+          <a href="#about" class="text-gray-600 hover:text-primary-teal transition duration-300">About</a>
+          <a href="#research" class="text-gray-600 hover:text-primary-teal transition duration-300">Research</a>
+          <a href="#projects" class="text-gray-600 hover:text-primary-teal transition duration-300">Projects</a>
+          <a href="#publications" class="text-gray-600 hover:text-primary-teal transition duration-300">Publications</a>
+          <a href="#outreach" class="text-gray-600 hover:text-primary-teal transition duration-300">Outreach</a>
+          <a href="#contact" class="px-3 py-1 bg-primary-blue text-white rounded-full hover:bg-primary-teal transition duration-300 shadow-soft">Contact</a>
         </div>
 
-        <!-- Mobile Button -->
-        <button id="mobile-menu-button" class="sm:hidden inline-flex items-center justify-center w-10 h-10 rounded-xl border border-slate-200 bg-white hover:bg-slate-50">
-          <svg class="w-5 h-5 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-          </svg>
-        </button>
+        <div class="sm:hidden">
+          <button id="mobile-menu-button" class="inline-flex items-center justify-center w-10 h-10 rounded-xl border border-gray-200 bg-white hover:bg-gray-50">
+            <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+          </button>
+        </div>
       </div>
 
-      <!-- Mobile Menu Panel -->
-      <div id="mobile-menu" class="sm:hidden hidden mt-4">
-        <div class="bg-white border border-slate-200 rounded-2xl p-4 shadow-soft space-y-3 text-sm font-semibold">
-          <a href="#about" class="block text-slate-700 hover:text-primary-teal">About</a>
-          <a href="#research" class="block text-slate-700 hover:text-primary-teal">Research</a>
-          <a href="#projects" class="block text-slate-700 hover:text-primary-teal">Projects</a>
-          <a href="#publications" class="block text-slate-700 hover:text-primary-teal">Publications</a>
-          <a href="#experience" class="block text-slate-700 hover:text-primary-teal">Experience</a>
-          <a href="#outreach" class="block text-slate-700 hover:text-primary-teal">Outreach</a>
+      <!-- Mobile panel -->
+      <div id="mobile-menu-panel" class="sm:hidden hidden mt-4">
+        <div class="bg-white border border-gray-200 rounded-2xl p-4 shadow-soft space-y-3 text-sm font-medium">
+          <a href="#about" class="block text-gray-700 hover:text-primary-teal">About</a>
+          <a href="#research" class="block text-gray-700 hover:text-primary-teal">Research</a>
+          <a href="#projects" class="block text-gray-700 hover:text-primary-teal">Projects</a>
+          <a href="#publications" class="block text-gray-700 hover:text-primary-teal">Publications</a>
+          <a href="#outreach" class="block text-gray-700 hover:text-primary-teal">Outreach</a>
           <a href="#contact" class="inline-flex items-center justify-center w-full px-3 py-2 bg-primary-blue text-white rounded-xl hover:bg-primary-teal transition">
             Contact
           </a>
         </div>
       </div>
+
     </nav>
   </header>
 
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
 
     <!-- HERO -->
-    <section id="home" class="py-14 md:py-20">
-      <div class="relative overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-sky-50 via-white to-indigo-50 shadow-soft">
-        <!-- subtle dots -->
-        <div class="absolute inset-0 opacity-[0.12]"
+    <section id="home" class="py-16 md:py-24 border-b border-gray-200">
+      <div class="relative overflow-hidden rounded-3xl border border-gray-200 bg-gradient-to-br from-sky-50 via-white to-indigo-50 shadow-soft">
+        <!-- soft dotted texture -->
+        <div class="absolute inset-0 opacity-[0.10]"
              style="background-image: radial-gradient(circle at 1px 1px, rgba(30,64,175,0.35) 1px, transparent 1px); background-size: 22px 22px;">
         </div>
         <!-- glow blobs -->
-        <div class="absolute -top-20 -left-24 w-72 h-72 bg-primary-teal/20 rounded-full blur-3xl"></div>
-        <div class="absolute -bottom-24 -right-24 w-72 h-72 bg-primary-blue/15 rounded-full blur-3xl"></div>
+        <div class="absolute -top-20 -left-24 w-80 h-80 bg-primary-teal/20 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-24 -right-24 w-80 h-80 bg-primary-blue/15 rounded-full blur-3xl"></div>
 
-        <div class="relative p-8 md:p-12">
-          <div class="max-w-3xl">
-            <div class="flex flex-wrap gap-2 mb-5">
-              <span class="px-3 py-1 rounded-full text-xs font-bold tracking-wide bg-white/80 border border-slate-200 text-slate-700">
-                Trustworthy AI
-              </span>
-              <span class="px-3 py-1 rounded-full text-xs font-bold tracking-wide bg-white/80 border border-slate-200 text-slate-700">
-                Uncertainty & Calibration
-              </span>
-              <span class="px-3 py-1 rounded-full text-xs font-bold tracking-wide bg-white/80 border border-slate-200 text-slate-700">
-                Reliability-Aware Autonomy (UAVs)
-              </span>
-            </div>
-
-            <h1 class="text-4xl md:text-6xl font-extrabold text-ink leading-tight">
+        <div class="relative p-10 md:p-14">
+          <div class="max-w-3xl mx-auto text-center">
+            <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight">
               Anshum Rankawat
             </h1>
 
-            <!-- IMPORTANT: no “PhD candidate” / no false claims -->
-            <p class="mt-4 text-lg md:text-xl font-semibold text-primary-blue">
-              Research in reliability, uncertainty, and safety-centric autonomous systems
+            <!-- removed "PhD Candidate & AI Reliability Engineer" -->
+            <p class="mt-4 text-xl md:text-2xl font-semibold text-primary-blue">
+              Trustworthy AI • Uncertainty & Calibration • Reliability-Aware Autonomy
             </p>
 
-            <p class="mt-5 text-base md:text-lg text-slate-700 leading-relaxed">
-              My work focuses on reliability in learning systems—how models behave when uncertainty spikes, data shifts,
-              or feedback becomes noisy—and how we evaluate and improve trust for safety-critical autonomy.
+            <!-- SDS value (no MBZUAI mention, no false claim) -->
+            <p class="mt-3 text-sm md:text-base text-gray-600">
+              PhD focus: <span class="font-semibold text-gray-800">Statistics & Data Science (SDS)</span>
             </p>
 
-            <div class="mt-7 flex flex-wrap gap-3">
-              <a href="#projects" class="px-5 py-2.5 rounded-full bg-primary-blue text-white font-semibold shadow-soft hover:bg-primary-teal transition">
+            <p class="mt-6 text-lg text-gray-700 max-w-2xl mx-auto">
+              Working at the intersection of <span class="text-primary-teal font-semibold">Trustworthy AI, Behavioral Meta-Learning, and Reliability-Aware Autonomous Systems</span>,
+              with a focus on evaluation (UQ + calibration) and safety-centric design.
+            </p>
+
+            <div class="mt-8 flex flex-wrap justify-center gap-3">
+              <a href="#projects" class="px-6 py-2.5 rounded-full bg-primary-blue text-white font-semibold hover:bg-primary-teal transition shadow-soft">
                 View Projects
               </a>
 
+              <!-- arXiv link added -->
               <a href="https://arxiv.org/abs/2601.06167" target="_blank" rel="noopener"
-                 class="px-5 py-2.5 rounded-full bg-white/90 border border-slate-200 text-primary-blue font-semibold hover:border-primary-teal hover:text-primary-teal transition">
+                 class="px-6 py-2.5 rounded-full bg-white/90 border border-gray-200 text-primary-blue font-semibold hover:border-primary-teal hover:text-primary-teal transition shadow-soft">
                 PGAR Preprint (arXiv:2601.06167)
               </a>
-
-              <a href="#publications" class="px-5 py-2.5 rounded-full bg-white/90 border border-slate-200 text-slate-700 font-semibold hover:border-primary-teal hover:text-primary-teal transition">
-                Publications
-              </a>
             </div>
-
-            <div class="mt-8 grid md:grid-cols-3 gap-4">
-              <div class="bg-white/80 border border-slate-200 rounded-2xl p-4">
-                <p class="text-xs font-extrabold text-slate-500 tracking-wider">FOCUS</p>
-                <p class="mt-2 text-sm text-slate-700">
-                  Reliability-aware learning, calibration, behavioural stability under shift
-                </p>
-              </div>
-              <div class="bg-white/80 border border-slate-200 rounded-2xl p-4">
-                <p class="text-xs font-extrabold text-slate-500 tracking-wider">METHODS</p>
-                <p class="mt-2 text-sm text-slate-700">
-                  UQ, reliability metrics (ECE / Brier), simulation-first evaluation
-                </p>
-              </div>
-              <div class="bg-white/80 border border-slate-200 rounded-2xl p-4">
-                <p class="text-xs font-extrabold text-slate-500 tracking-wider">APPLICATIONS</p>
-                <p class="mt-2 text-sm text-slate-700">
-                  UAV planning & autonomy with safety constraints
-                </p>
-              </div>
-            </div>
-
           </div>
         </div>
+
       </div>
     </section>
 
     <!-- ABOUT -->
-    <section id="about" class="py-14 md:py-18 border-t border-slate-100">
-      <h2 class="section-title text-ink">About</h2>
-      <div class="grid lg:grid-cols-3 gap-10 items-start">
-        <div class="lg:col-span-2 space-y-5 text-base md:text-lg text-slate-700 leading-relaxed">
-          <p>
-            I work at the intersection of Trustworthy AI and reliability-aware autonomy. I’m especially interested in
-            evaluation: calibration, uncertainty, stability/recovery, and reliability monitoring under distribution shift.
-          </p>
-          <p>
-            I also build applied systems (data pipelines, validation layers, monitoring) where reliability matters in real-world workflows.
-          </p>
-        </div>
-
-        <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-soft">
-          <p class="text-sm font-extrabold text-slate-800">Quick Snapshot</p>
-          <div class="mt-4 space-y-3 text-sm text-slate-700">
-            <div class="flex gap-2">
-              <span class="font-bold text-slate-800">Core:</span>
-              <span>UQ, calibration, reliability analysis</span>
-            </div>
-            <div class="flex gap-2">
-              <span class="font-bold text-slate-800">Autonomy:</span>
-              <span>UAV planning, safety evaluation</span>
-            </div>
-            <div class="flex gap-2">
-              <span class="font-bold text-slate-800">Tools:</span>
-              <span>Python, PyTorch/TensorFlow, AWS, Airflow, Spark</span>
-            </div>
-          </div>
-        </div>
+    <section id="about" class="py-16 md:py-20 border-b border-gray-200">
+      <h2 class="section-title text-gray-900">About Me</h2>
+      <div class="space-y-6 text-lg text-gray-700 leading-relaxed">
+        <p>
+          I am a researcher and engineer working at the intersection of Trustworthy AI, Behavioral Meta-Learning, and Reliability-Aware Autonomous Systems.
+          My work integrates applied machine learning, AI reliability evaluation, and safety-centric design for autonomous aerial systems.
+          I am equally committed to community-driven education, having taught and mentored learners across rural, urban, and underserved regions.
+        </p>
+        <p>
+          I care about AI systems that are not only performant but also
+          <span class="font-semibold text-primary-blue">reliable, interpretable, and behaviourally stable.</span>
+          My research and outreach emphasize human-centered thinking, continuous learning, and responsible innovation.
+        </p>
       </div>
     </section>
 
     <!-- RESEARCH -->
-    <section id="research" class="py-14 md:py-18 border-t border-slate-100">
-      <h2 class="section-title text-ink">Research Focus Areas</h2>
-
-      <div class="grid md:grid-cols-2 gap-10">
-        <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-soft">
-          <h3 class="text-lg font-extrabold text-primary-blue">Primary Themes</h3>
-          <ul class="mt-4 space-y-2 text-slate-700 list-disc list-inside">
-            <li>Trustworthy AI & reliability-aware learning</li>
-            <li>Uncertainty quantification & model calibration</li>
-            <li>Behavioural stability under noisy feedback / shift</li>
-            <li>Reliability-aware autonomy (UAV path planning)</li>
+    <section id="research" class="py-16 md:py-20 border-b border-gray-200">
+      <h2 class="section-title text-gray-900">Research Focus Areas</h2>
+      <div class="grid md:grid-cols-2 gap-12">
+        <div class="bg-white/70 rounded-2xl border border-gray-200 p-6 shadow-soft">
+          <h3 class="text-xl font-bold mb-4 text-primary-blue">Primary Research Themes</h3>
+          <ul class="list-disc list-inside space-y-2 text-gray-700 ml-2">
+            <li>Trustworthy AI & Reliability-Aware Learning</li>
+            <li>Behavioral Meta-Learning & Adaptive Learning Dynamics</li>
+            <li>Uncertainty Quantification & Model Calibration</li>
+            <li>Safe UAV Autonomy & Path Planning</li>
+            <li>Robust Machine Learning & Optimization</li>
           </ul>
         </div>
-
-        <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-soft">
-          <h3 class="text-lg font-extrabold text-primary-blue">Statistics & Data Science (SDS) Angle</h3>
-          <ul class="mt-4 space-y-2 text-slate-700 list-disc list-inside">
-            <li>Bayesian inference, regression</li>
-            <li>Statistical optimization</li>
-            <li>High-dimensional statistics (skills background)</li>
-            <li>Trustworthy evaluation metrics (ECE, Brier Score)</li>
+        <div class="bg-white/70 rounded-2xl border border-gray-200 p-6 shadow-soft">
+          <h3 class="text-xl font-bold mb-4 text-primary-blue">Complementary Interests</h3>
+          <ul class="list-disc list-inside space-y-2 text-gray-700 ml-2">
+            <li>Learning dynamics and optimization behavior</li>
+            <!-- removed “High-dimensional statistical modeling” (you said you didn’t do this) -->
+            <li>Statistical learning & inference (SDS)</li>
+            <li>AI safety and reliability assessment</li>
+            <li>Human-centered ML applications</li>
           </ul>
-          <p class="mt-4 text-xs text-slate-500">
-            (Kept as skills/interest — not claiming extra projects beyond your CV.)
-          </p>
         </div>
       </div>
     </section>
 
     <!-- PROJECTS -->
-    <section id="projects" class="py-14 md:py-18 border-t border-slate-100">
-      <h2 class="section-title text-ink">Selected Research Projects</h2>
+    <section id="projects" class="py-16 md:py-20 border-b border-gray-200">
+      <h2 class="section-title text-gray-900">Selected Research Projects</h2>
 
       <div class="grid gap-8 lg:grid-cols-2">
 
         <!-- PGAR -->
-        <div class="card-hover bg-white p-6 rounded-2xl shadow-soft border border-slate-200">
-          <div class="flex flex-wrap items-center gap-2">
-            <span class="text-xs font-extrabold uppercase tracking-wider text-sky-700 bg-sky-100 px-3 py-1 rounded-full">
-              Preprint (arXiv)
-            </span>
-            <span class="text-xs font-extrabold uppercase tracking-wider text-red-600 bg-red-100 px-3 py-1 rounded-full">
-              Patent (Provisional)
-            </span>
-          </div>
+        <div class="project-card bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+          <span class="text-xs font-semibold uppercase tracking-wider text-sky-700 bg-sky-100 px-3 py-1 rounded-full">
+            Preprint (arXiv)
+          </span>
 
-          <h3 class="text-2xl font-extrabold mt-3 text-ink">
-            Parent-Guided Adaptive Reliability (PGAR)
-          </h3>
-          <p class="text-sm text-slate-500 mt-1">Independent Research (2024–Present)</p>
+          <h3 class="text-2xl font-bold mt-3 text-gray-900">Behavioral Reliability in Learning Systems (PGAR)</h3>
+          <p class="text-sm text-gray-500 mt-1">Independent Research (2024–present)</p>
 
-          <div class="mt-4 space-y-2 text-slate-700">
-            <p class="font-semibold text-primary-blue">
-              A behavioural meta-learning direction for reliability monitoring and stable adaptation under uncertainty and shift.
+          <div class="mt-4 space-y-2 text-gray-600">
+            <p class="font-medium text-primary-blue">
+              PGAR is a behavioral meta-learning concept focusing on how learning systems adjust their behavior over time.
             </p>
-            <ul class="list-disc list-inside text-sm ml-1 space-y-1">
-              <li>Focus on uncertainty quantification and calibration</li>
-              <li>Reliability evaluation with ECE, Brier Score, stability/recovery measures</li>
-              <li>Public sharing limited to title/concepts where needed (IP / submission constraints)</li>
+            <ul class="list-disc list-inside text-sm ml-4 space-y-1">
+              <li>How models behave under shifting uncertainty</li>
+              <li>How calibration and confidence drift during learning</li>
+              <li>How supervisory behavioral cues support more stable adaptation</li>
             </ul>
+            <p class="text-sm italic font-semibold pt-2">
+              Note: Only conceptual information is shared publicly where needed. No sensitive implementation details are disclosed.
+            </p>
           </div>
 
-          <div class="mt-5 flex flex-wrap gap-3 text-sm">
+          <div class="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-sm">
+            <span class="font-semibold text-gray-700">Status:</span> Under Review (IEEE Transactions on Artificial Intelligence)
+            <span class="font-semibold text-gray-700">Patent:</span> Indian Provisional Patent No. 202511103841 (2025)
+          </div>
+
+          <!-- arXiv link added -->
+          <div class="mt-5">
             <a href="https://arxiv.org/abs/2601.06167" target="_blank" rel="noopener"
-               class="inline-flex items-center px-4 py-2 rounded-xl bg-white border border-slate-200 text-primary-blue font-bold hover:border-primary-teal hover:text-primary-teal transition">
+               class="inline-flex items-center text-primary-blue hover:text-primary-teal font-medium transition duration-300">
               View Preprint (arXiv:2601.06167)
             </a>
-            <span class="inline-flex items-center px-4 py-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-700">
-              Journal: Submitted (Under Review) — IEEE TAI
-            </span>
           </div>
-
-          <p class="mt-4 text-xs text-slate-500">
-            Patent: Indian Provisional Patent No. 202511103841 (2025)
-          </p>
         </div>
 
-        <!-- DRDO UAV -->
-        <div class="card-hover bg-white p-6 rounded-2xl shadow-soft border border-slate-200">
-          <span class="text-xs font-extrabold uppercase tracking-wider text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full">
-            Autonomy & Safety (UAVs)
+        <!-- UAV -->
+        <div class="project-card bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+          <span class="text-xs font-semibold uppercase tracking-wider text-primary-teal bg-teal-100 px-3 py-1 rounded-full">
+            Defense & Autonomy
           </span>
+          <h3 class="text-2xl font-bold mt-3 text-gray-900">UAV Reliability & Autonomous Path Planning</h3>
+          <p class="text-sm text-gray-500 mt-1">DRDO–ITR Chandipur (2024–2025)</p>
 
-          <h3 class="text-2xl font-extrabold mt-3 text-ink">
-            UAV Reliability & Autonomous Path Planning
-          </h3>
-          <p class="text-sm text-slate-500 mt-1">DRDO – ITR Chandipur (Research) • Jan 2024 – Mar 2025</p>
-
-          <div class="mt-4 space-y-2 text-slate-700">
-            <ul class="list-disc list-inside text-sm ml-1 space-y-1">
-              <li>Simulation-based evaluation for static + moving obstacle scenarios</li>
-              <li>Guided RRT* variants and reliability-aware trajectory planning</li>
-              <li>Reliability metrics, safety margins, and performance analysis</li>
+          <div class="mt-4 space-y-2 text-gray-600">
+            <p>Worked on safety-focused UAV autonomy research involving:</p>
+            <ul class="list-disc list-inside text-sm ml-4 space-y-1">
+              <li>Dynamic obstacle avoidance and real-time collision prediction</li>
+              <li>Reliability-aware guided RRT enhancements</li>
+              <li>Simulation-based validation for autonomous UAV missions</li>
             </ul>
           </div>
 
-          <div class="mt-5 text-sm">
+          <div class="mt-4 text-sm">
             <a href="https://www.youtube.com/watch?v=kv7Jp1ojBeM" target="_blank" rel="noopener"
-               class="inline-flex items-center text-primary-blue hover:text-primary-teal font-bold transition">
-              <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+               class="flex items-center text-primary-blue hover:text-primary-teal font-medium transition duration-300">
+              <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm6.5 4.5l5 3-5 3v-6z"></path>
               </svg>
-              Conference Talk: IEEE ICORT 2025 (Video)
+              Conference Talk: IEEE ICORT 2025 Presentation (Video)
             </a>
           </div>
         </div>
 
-        <!-- AstroDeus (NOT separate section; kept inside Projects only) -->
-        <div class="card-hover bg-white p-6 rounded-2xl shadow-soft border border-slate-200 lg:col-span-2">
-          <span class="text-xs font-extrabold uppercase tracking-wider text-violet-700 bg-violet-100 px-3 py-1 rounded-full">
-            AI Autonomy & Reliability (Applied)
+        <!-- Applied Data Reliability -->
+        <div class="project-card bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+          <span class="text-xs font-semibold uppercase tracking-wider text-indigo-500 bg-indigo-100 px-3 py-1 rounded-full">
+            Data Engineering
           </span>
-
-          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-3">
-            <div>
-              <h3 class="text-2xl font-extrabold mt-3 text-ink">
-                AstroDeus — Project “Shasak”
-              </h3>
-              <p class="text-sm text-slate-500 mt-1">Oct 2025 – Present</p>
-            </div>
-          </div>
-
-          <div class="mt-4 text-slate-700">
-            <ul class="list-disc list-inside text-sm ml-1 space-y-1">
-              <li>Contributing to a defence-innovation project with BITS Pilani & CEERI (CSIR), focused on AI-driven loitering-munition autonomy</li>
-              <li>Developing ML modules for detection, multi-object tracking, and path planning</li>
-              <li>Applying PGAR to test autonomy/reliability of UAV control systems, translating simulation research into prototypes</li>
+          <h3 class="text-2xl font-bold mt-3 text-gray-900">Applied Data Reliability & Streaming Analytics</h3>
+          <p class="text-sm text-gray-500 mt-1">Atom Build / SonyLIV Asia Cup 2025</p>
+          <div class="mt-4 space-y-2 text-gray-600">
+            <p>Involved in high-throughput pipelines focusing on reliability and traceability layers:</p>
+            <ul class="list-disc list-inside text-sm ml-4 space-y-1">
+              <li>Airflow & AWS-based data engineering</li>
+              <li>Real-time ad-performance monitoring</li>
+              <li>Ensuring data consistency during peak-traffic sports events</li>
             </ul>
           </div>
+        </div>
 
-          <p class="mt-4 text-xs text-slate-500">
-            (Placed here to avoid a separate “AstroDeus” section, as you requested.)
-          </p>
+        <!-- AstroDeus (added BEFORE sleep analysis) -->
+        <div class="project-card bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+          <span class="text-xs font-semibold uppercase tracking-wider text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full">
+            AI Autonomy & Reliability
+          </span>
+          <h3 class="text-2xl font-bold mt-3 text-gray-900">AstroDeus – Project “Shasak”</h3>
+          <p class="text-sm text-gray-500 mt-1">Oct 2025 – Present</p>
+          <div class="mt-4 space-y-2 text-gray-600">
+            <ul class="list-disc list-inside text-sm ml-4 space-y-1">
+              <li>Contributing to a defence-innovation project with BITS Pilani & CEERI (CSIR), focused on AI-driven loitering-munition autonomy.</li>
+              <li>Developing ML modules for detection, multi-object tracking, and path planning.</li>
+              <li>Applying the PGAR framework to test autonomy and reliability of UAV control systems, translating simulation research into autonomous prototypes.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Sleep Analysis -->
+        <div class="project-card bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+          <span class="text-xs font-semibold uppercase tracking-wider text-green-500 bg-green-100 px-3 py-1 rounded-full">
+            Human-Centered ML
+          </span>
+          <h3 class="text-2xl font-bold mt-3 text-gray-900">Personal Data Science Project – Sleep Analysis</h3>
+          <p class="text-sm text-gray-500 mt-1">Personal Project</p>
+          <div class="mt-4 space-y-2 text-gray-600">
+            <p>Analyzing self-tracked sleep patterns to understand behavioral trends affecting rest quality.</p>
+            <ul class="list-disc list-inside text-sm ml-4 space-y-1">
+              <li>Time-series exploration & Visualization of sleep consistency</li>
+              <li>Correlation insights for data-driven habit improvements</li>
+            </ul>
+          </div>
+          <div class="mt-4 text-sm">
+            <a href="https://www.kaggle.com/code/anshumrankawat/sleep-analysis" target="_blank" rel="noopener"
+               class="flex items-center text-primary-blue hover:text-primary-teal font-medium transition duration-300">
+              <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 3a1 1 0 00-1 1v4a1 1 0 002 0V4a1 1 0 00-1-1zM5 9a1 1 0 110-2h10a1 1 0 110 2H5z" clip-rule="evenodd"></path>
+              </svg>
+              View on Kaggle
+            </a>
+          </div>
         </div>
 
       </div>
     </section>
 
-    <!-- PUBLICATIONS FIRST (before Experience/Outreach) -->
-    <section id="publications" class="py-14 md:py-18 border-t border-slate-100">
-      <h2 class="section-title text-ink">Publications & Intellectual Property</h2>
+    <!-- OUTREACH -->
+    <section id="outreach" class="py-16 md:py-20 border-b border-gray-200">
+      <h2 class="section-title text-gray-900">Teaching & Educational Outreach</h2>
+      <div class="grid gap-8 md:grid-cols-2">
 
-      <div class="grid lg:grid-cols-2 gap-8">
-
-        <!-- Patent -->
-        <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-soft">
-          <h3 class="text-lg font-extrabold text-red-600">Patent</h3>
-          <p class="mt-3 text-slate-800 font-bold">
-            Behavioral Reliability in Learning Systems (PGAR)
-          </p>
-          <p class="text-sm text-slate-600 mt-1">
-            Indian Provisional Patent No. 202511103841 (2025)
-          </p>
-        </div>
-
-        <!-- Journal/Preprint -->
-        <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-soft">
-          <h3 class="text-lg font-extrabold text-primary-blue">Preprint & Journal Submission</h3>
-          <p class="mt-3 text-slate-800 font-bold">
-            Parent-Guided Adaptive Reliability (PGAR): Behavioral Meta-Learning for Reliable Optimization
-          </p>
-          <p class="text-sm text-slate-600 mt-1">
-            Preprint available • Submitted (Under Review) — IEEE Transactions on Artificial Intelligence (2025)
-          </p>
-          <a href="https://arxiv.org/abs/2601.06167" target="_blank" rel="noopener"
-             class="mt-4 inline-flex items-center text-primary-blue hover:text-primary-teal font-bold transition text-sm">
-            View arXiv:2601.06167
+        <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 project-card">
+          <h3 class="text-xl font-bold text-gray-900">Child Safety Awareness Workshop – "Good Touch & Bad Touch"</h3>
+          <p class="text-sm text-gray-500 mt-1">Structured workshop for school children.</p>
+          <ul class="list-disc list-inside text-sm text-gray-600 mt-3 ml-4 space-y-1">
+            <li>Emphasizes visual and age-appropriate explanation.</li>
+            <li>Focuses on trust-building, sensitivity, and responsible educational outreach.</li>
+          </ul>
+          <a href="https://www.youtube.com/watch?v=85XvvjZILhA" target="_blank" rel="noopener"
+             class="mt-4 inline-flex items-center text-primary-blue hover:text-primary-teal text-sm font-medium transition duration-300">
+            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 6a2 2 0 012-2h12a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zm8.5 4.5l5-3-5-3v6z"></path>
+            </svg>
+            View Workshop Video
           </a>
         </div>
 
-        <!-- Peer-reviewed -->
-        <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-soft lg:col-span-2">
-          <h3 class="text-lg font-extrabold text-primary-teal">Peer-Reviewed / Conference Papers</h3>
-          <ul class="mt-4 space-y-4 text-slate-700">
-            <li>
-              <span class="font-bold">Flight Path Planning for UAVs in Environment with Moving Obstacles</span> — IEEE ICORT 2025
-              <a href="https://doi.org/10.1109/ICORT64008.2025.11115178" target="_blank" rel="noopener"
-                 class="ml-2 text-sm font-bold text-primary-teal hover:underline">(DOI)</a>
-            </li>
-            <li>
-              <span class="font-bold">Flight Path Planning for UAVs Using Guided RRT* Algorithm</span> — IEEE ICISSGT 2024
-              <a href="https://doi.org/10.1109/ICISSGT58904.2024.00020" target="_blank" rel="noopener"
-                 class="ml-2 text-sm font-bold text-primary-teal hover:underline">(DOI)</a>
-            </li>
-            <li>
-              <span class="font-bold">Flight Path Planning for UAVs Using Machine Learning-Guided RRT* Algorithms</span> — NCEPST 2025 (IJIRT, in press) • Presented
-            </li>
+        <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 project-card">
+          <h3 class="text-xl font-bold text-gray-900">Nitaya Kalyan – Educational Initiative (Founder)</h3>
+          <p class="text-sm text-gray-500 mt-1">A volunteer-led platform for accessible education.</p>
+          <ul class="list-disc list-inside text-sm text-gray-600 mt-3 ml-4 space-y-1">
+            <li>Conducts STEM learning and foundational education sessions.</li>
+            <li>Runs communication skills, confidence-building, and creative learning modules.</li>
           </ul>
+          <p class="mt-4 text-xs italic text-gray-500">Reflects long-term commitment to accessible education.</p>
+        </div>
 
-          <p class="mt-4 text-xs text-slate-500">
-            (Updated wording to avoid acceptance-claim confusion.)
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="publications" class="py-16 md:py-20 border-b border-gray-200">
+      <h2 class="section-title text-gray-900">Publications & Intellectual Property</h2>
+
+      <div class="space-y-8">
+        <div class="border-b pb-4">
+          <h3 class="text-xl font-bold text-red-600">Patent</h3>
+          <p class="mt-2 text-lg text-gray-800 font-semibold">Behavioral Reliability in Learning Systems (PGAR)</p>
+          <p class="text-sm text-gray-600">Provisional Patent, 2025 (Indian Provisional Patent No. 202511103841)</p>
+        </div>
+
+        <!-- fixed: removed “Accepted &” (no false promise) + added arXiv -->
+        <div class="border-b pb-4">
+          <h3 class="text-xl font-bold text-primary-blue">Preprint & Journal Submission</h3>
+          <p class="mt-2 text-lg text-gray-800 font-semibold">Parent-Guided Adaptive Reliability (PGAR)</p>
+          <p class="text-sm text-gray-600">
+            Preprint available on arXiv: <a class="text-primary-blue hover:underline" href="https://arxiv.org/abs/2601.06167" target="_blank" rel="noopener">2601.06167</a><br/>
+            Submitted to IEEE Transactions on Artificial Intelligence (Under Review).
           </p>
         </div>
 
+        <div>
+          <h3 class="text-xl font-bold text-primary-teal">Published Papers (Peer-Reviewed)</h3>
+          <ul class="mt-4 space-y-4">
+            <li class="text-gray-700">
+              <span class="font-medium">Flight Path Planning for UAVs in Environments with Moving Obstacles</span> – IEEE ICORT 2025
+              <a href="https://doi.org/10.1109/ICORT64008.2025.11115178" target="_blank" rel="noopener"
+                 class="ml-2 text-xs text-primary-teal hover:underline">(DOI Link)</a>
+            </li>
+            <li class="text-gray-700">
+              <span class="font-medium">Flight Path Planning for UAVs Using Guided RRT Algorithm</span> – IEEE ICISSGT 2024
+              <a href="https://doi.org/10.1109/ICISSGT58904.2024.00020" target="_blank" rel="noopener"
+                 class="ml-2 text-xs text-primary-teal hover:underline">(DOI Link)</a>
+            </li>
+            <!-- fixed: “Presented” instead of “Accepted” -->
+            <li class="text-gray-700">
+              <span class="font-medium">Flight Path Planning for UAVs Using Machine Learning-Guided RRT Algorithms</span> – NCEPST 2025 (IJIRT, In Press) • Presented
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <!-- EXPERIENCE (no duplicates in Projects) -->
-    <section id="experience" class="py-14 md:py-18 border-t border-slate-100">
-      <h2 class="section-title text-ink">Research & Applied Experience</h2>
-
-      <div class="grid lg:grid-cols-2 gap-8">
-
-        <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-soft card-hover">
-          <span class="text-xs font-extrabold uppercase tracking-wider text-indigo-700 bg-indigo-100 px-3 py-1 rounded-full">
-            Data Engineering
-          </span>
-          <h3 class="text-xl font-extrabold mt-3 text-ink">Atom Build — Data Engineer</h3>
-          <p class="text-sm text-slate-500 mt-1">May 2025 – Present</p>
-          <ul class="mt-4 list-disc list-inside text-sm text-slate-700 space-y-1">
-            <li>Build and maintain Airflow + AWS + Jenkins pipelines (GAM, AppsFlyer, internal analytics)</li>
-            <li>Validation/monitoring layers for reliability and traceability of ad-performance data</li>
-            <li>Supported SonyLIV Asia Cup 2025 analytics workflows during peak traffic</li>
-          </ul>
-        </div>
-
-        <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-soft card-hover">
-          <span class="text-xs font-extrabold uppercase tracking-wider text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full">
-            Defence R&D
-          </span>
-          <h3 class="text-xl font-extrabold mt-3 text-ink">DRDO — Integrated Test Range (ITR)</h3>
-          <p class="text-sm text-slate-500 mt-1">Jan 2024 – Sep 2024</p>
-          <ul class="mt-4 list-disc list-inside text-sm text-slate-700 space-y-1">
-            <li>UAV reliability & autonomous path-planning research (simulation-based)</li>
-            <li>Software IV&V Engineer (via GVR Technolabs): test reporting, reviews, QC documentation</li>
-          </ul>
-        </div>
-
-        <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-soft card-hover">
-          <span class="text-xs font-extrabold uppercase tracking-wider text-sky-700 bg-sky-100 px-3 py-1 rounded-full">
-            Social Impact (Data)
-          </span>
-          <h3 class="text-xl font-extrabold mt-3 text-ink">Nirmaan Organisation — Data Analyst</h3>
-          <p class="text-sm text-slate-500 mt-1">Dec 2022 – Dec 2023</p>
-          <ul class="mt-4 list-disc list-inside text-sm text-slate-700 space-y-1">
-            <li>Analyzed volunteer-activity datasets and built dashboards for engagement & learning outcomes</li>
-          </ul>
-        </div>
-
-        <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-soft card-hover">
-          <span class="text-xs font-extrabold uppercase tracking-wider text-slate-700 bg-slate-100 px-3 py-1 rounded-full">
-            Industry
-          </span>
-          <h3 class="text-xl font-extrabold mt-3 text-ink">Twilio India (HATCH) — Software Engineer Apprentice</h3>
-          <p class="text-sm text-slate-500 mt-1">Oct 2021 – Apr 2022</p>
-          <ul class="mt-4 list-disc list-inside text-sm text-slate-700 space-y-1">
-            <li>Data Science API team: fraud/anomaly analysis support, Python validation scripts, API monitoring</li>
-          </ul>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- OUTREACH (down, as you want) + keep Amazon -->
-    <section id="outreach" class="py-14 md:py-18 border-t border-slate-100">
-      <h2 class="section-title text-ink">Teaching, Writing & Outreach</h2>
+    <!-- BOOK & LEADERSHIP -->
+    <section class="py-16 md:py-20 border-b border-gray-200">
+      <h2 class="section-title text-gray-900">Monographs & Leadership</h2>
 
       <div class="grid gap-8 lg:grid-cols-2">
-
-        <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-soft card-hover">
-          <h3 class="text-xl font-extrabold text-ink">Teach for Change: Volunteers Can Make a Difference (2023)</h3>
-          <p class="text-sm text-slate-500 mt-1">Amazon KDP (Monograph)</p>
-          <ul class="mt-4 list-disc list-inside text-sm text-slate-700 space-y-1">
-            <li>Community-led education, volunteering, and STEM literacy</li>
-            <li>Practical reflections on teaching and impact</li>
+        <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 project-card">
+          <h3 class="text-xl font-bold text-gray-900">Teach for Change: Volunteers Can Make a Difference (2023)</h3>
+          <p class="text-sm text-gray-500 mt-1">A monograph on community-led education and volunteer impact.</p>
+          <ul class="list-disc list-inside text-sm text-gray-600 mt-3 ml-4 space-y-1">
+            <li>Focuses on building confidence, safety awareness, curiosity, and empathy.</li>
+            <li>Complements teaching and community engagement philosophy.</li>
           </ul>
           <a href="https://www.amazon.in/Teach-change-Volunteers-make-diffrence-ebook/dp/B0C2Q756QK" target="_blank" rel="noopener"
-             class="mt-4 inline-flex items-center text-primary-blue hover:text-primary-teal font-bold transition text-sm">
+             class="mt-4 inline-flex items-center text-primary-blue hover:text-primary-teal text-sm font-medium transition duration-300">
+            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.26 4.26A2 2 0 007.91 3.91l-3 3a2 2 0 00.41 2.82l.82.82a2 2 0 002.82-.41l3-3a2 2 0 00-.41-2.82l-.82-.82zM15.41 12.12l-3.3-3.3a2 2 0 00-2.83 0l-3 3a2 2 0 000 2.83l3.3 3.3a2 2 0 002.83 0l3-3a2 2 0 000-2.83z"></path>
+            </svg>
             View on Amazon
           </a>
         </div>
 
-        <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-soft card-hover">
-          <h3 class="text-xl font-extrabold text-ink">Nitaya Kalyan — Educational Initiative (Founder)</h3>
-          <p class="text-sm text-slate-500 mt-1">Volunteer-led education outreach</p>
-          <ul class="mt-4 list-disc list-inside text-sm text-slate-700 space-y-1">
-            <li>STEM and foundational learning sessions</li>
-            <li>Communication skills & confidence-building modules</li>
-          </ul>
-        </div>
-
-        <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-soft card-hover">
-          <h3 class="text-xl font-extrabold text-ink">Child Safety Awareness Workshop</h3>
-          <p class="text-sm text-slate-500 mt-1">School workshop (educational content)</p>
-          <a href="https://www.youtube.com/watch?v=85XvvjZILhA" target="_blank" rel="noopener"
-             class="mt-4 inline-flex items-center text-primary-blue hover:text-primary-teal font-bold transition text-sm">
-            Watch workshop video
-          </a>
-        </div>
-
-        <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-soft card-hover">
-          <h3 class="text-xl font-extrabold text-ink">Toastmasters — Leadership</h3>
-          <p class="text-sm text-slate-500 mt-1">Club President (District 98)</p>
-          <ul class="mt-4 list-disc list-inside text-sm text-slate-700 space-y-1">
-            <li>Led club meetings, evaluation workflows, and mentoring</li>
-            <li>Extempore Speech Contest — 3rd place</li>
+        <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 project-card">
+          <h3 class="text-xl font-bold text-gray-900">Journey of a Toastmaster – Leadership & Growth</h3>
+          <p class="text-sm text-gray-500 mt-1">Podcast-style conversation covering leadership and communication.</p>
+          <ul class="list-disc list-inside text-sm text-gray-600 mt-3 ml-4 space-y-1">
+            <li>Structured thinking through Toastmasters practice.</li>
+            <li>Mentoring learners and teams; confident public-speaking mindset.</li>
           </ul>
           <a href="https://www.youtube.com/watch?v=7JJ3uIyGQ8A" target="_blank" rel="noopener"
-             class="mt-4 inline-flex items-center text-primary-blue hover:text-primary-teal font-bold transition text-sm">
-            Watch interview video
+             class="mt-4 inline-flex items-center text-primary-blue hover:text-primary-teal text-sm font-medium transition duration-300">
+            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm6.5 4.5l5 3-5 3v-6z"></path>
+            </svg>
+            Watch Interview Video
           </a>
         </div>
-
-      </div>
-    </section>
-
-    <!-- YouTube ONLY near bottom (no separate nav item) -->
-    <section id="youtube" class="py-14 md:py-18 border-t border-slate-100">
-      <h2 class="section-title text-ink">YouTube</h2>
-      <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-soft">
-        <p class="text-slate-700">
-          I share lectures/talks and educational content around AI, reliability, and learning—plus selected public talks.
-        </p>
-        <a href="https://www.youtube.com/@anshumrankawat/" target="_blank" rel="noopener"
-           class="mt-4 inline-flex items-center px-4 py-2 rounded-xl bg-primary-blue text-white font-bold hover:bg-primary-teal transition shadow-soft">
-          Visit Channel
-        </a>
-        <p class="mt-3 text-xs text-slate-500">
-          (Kept only at the bottom as requested.)
-        </p>
       </div>
     </section>
 
     <!-- SKILLS -->
-    <section id="skills" class="py-14 md:py-18 border-t border-slate-100">
-      <h2 class="section-title text-ink">Technical Skills</h2>
-
+    <section id="skills" class="py-16 md:py-20 border-b border-gray-200">
+      <h2 class="section-title text-gray-900">Technical Skills</h2>
       <div class="flex flex-wrap gap-3">
-        <span class="bg-slate-100 text-slate-800 px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary-teal hover:text-white transition">
-          Python, NumPy, Pandas, SciPy
-        </span>
-        <span class="bg-slate-100 text-slate-800 px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary-teal hover:text-white transition">
-          Scikit-learn, PyTorch, TensorFlow
-        </span>
-        <span class="bg-slate-100 text-slate-800 px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary-teal hover:text-white transition">
-          Uncertainty Quantification, Calibration (ECE, Brier)
-        </span>
-        <span class="bg-slate-100 text-slate-800 px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary-teal hover:text-white transition">
-          Reliability Analysis, Statistical Optimization
-        </span>
-        <span class="bg-slate-100 text-slate-800 px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary-teal hover:text-white transition">
-          AWS, Airflow, Docker, Spark
-        </span>
-        <span class="bg-slate-100 text-slate-800 px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary-teal hover:text-white transition">
-          Git, LaTeX, SQL
-        </span>
+        <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full text-sm font-medium hover:bg-primary-teal hover:text-white transition duration-300">Python, PyTorch, TensorFlow</span>
+        <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full text-sm font-medium hover:bg-primary-teal hover:text-white transition duration-300">Machine Learning, Meta-Learning, Model Calibration</span>
+        <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full text-sm font-medium hover:bg-primary-teal hover:text-white transition duration-300">Uncertainty Quantification, Reliability Analysis</span>
+        <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full text-sm font-medium hover:bg-primary-teal hover:text-white transition duration-300">Apache Airflow, AWS Services, Data Pipelines</span>
+        <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full text-sm font-medium hover:bg-primary-teal hover:text-white transition duration-300">Applied Statistics, Optimization Methods</span>
+        <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full text-sm font-medium hover:bg-primary-teal hover:text-white transition duration-300">UAV Simulation & Modeling Tools</span>
       </div>
     </section>
 
-    <!-- CONTACT (NO Kaggle) -->
-    <section id="contact" class="py-14 md:py-18 border-t border-slate-100">
-      <h2 class="section-title text-ink">Contact</h2>
+    <!-- CONTACT (YouTube added before Kaggle) -->
+    <section id="contact" class="py-16 md:py-20">
+      <h2 class="section-title text-gray-900">Get in Touch</h2>
 
       <div class="grid md:grid-cols-3 gap-8 text-center md:text-left">
-        <div class="bg-white p-6 rounded-2xl shadow-soft border border-slate-200 card-hover">
-          <h3 class="text-lg font-extrabold text-primary-blue">Email</h3>
-          <p class="mt-1 text-slate-700">anshumrankawat@gmail.com</p>
-          <a href="mailto:anshumrankawat@gmail.com" class="text-sm text-primary-teal font-bold hover:underline">
-            Send an email
-          </a>
+
+        <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 project-card">
+          <h3 class="text-lg font-semibold text-primary-blue">Email</h3>
+          <p class="mt-1 text-gray-700">anshumiaf@gmail.com</p>
+          <a href="mailto:anshumiaf@gmail.com" class="text-sm text-primary-teal hover:underline">Send an Email</a>
         </div>
 
-        <div class="bg-white p-6 rounded-2xl shadow-soft border border-slate-200 card-hover">
-          <h3 class="text-lg font-extrabold text-primary-blue">LinkedIn</h3>
-          <p class="mt-1 text-slate-700">linkedin.com/in/anshum-rankawat</p>
+        <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 project-card">
+          <h3 class="text-lg font-semibold text-primary-blue">LinkedIn</h3>
+          <p class="mt-1 text-gray-700">Anshum Rankawat</p>
           <a href="https://www.linkedin.com/in/anshum-rankawat" target="_blank" rel="noopener"
-             class="text-sm text-primary-teal font-bold hover:underline">
-            Connect
-          </a>
+             class="text-sm text-primary-teal hover:underline">Connect</a>
         </div>
 
-        <div class="bg-white p-6 rounded-2xl shadow-soft border border-slate-200 card-hover">
-          <h3 class="text-lg font-extrabold text-primary-blue">GitHub</h3>
-          <p class="mt-1 text-slate-700">github.com/AnshumR</p>
-          <a href="https://github.com/AnshumR" target="_blank" rel="noopener"
-             class="text-sm text-primary-teal font-bold hover:underline">
-            View repositories
-          </a>
+        <!-- YouTube added BEFORE Kaggle -->
+        <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 project-card">
+          <h3 class="text-lg font-semibold text-primary-blue">YouTube</h3>
+          <p class="mt-1 text-gray-700">Lectures & research content</p>
+          <a href="https://www.youtube.com/@anshumrankawat/videos" target="_blank" rel="noopener"
+             class="text-sm text-primary-teal hover:underline">Watch on YouTube</a>
         </div>
+
+        <!-- Kaggle stays (as you requested “before Kaggle add YouTube”) -->
+        <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 project-card md:col-span-3">
+          <div class="grid md:grid-cols-3 gap-6 items-center text-center md:text-left">
+            <div class="md:col-span-1">
+              <h3 class="text-lg font-semibold text-primary-blue">Kaggle</h3>
+              <p class="mt-1 text-gray-700">anshumrankawat</p>
+            </div>
+            <div class="md:col-span-2">
+              <a href="https://www.kaggle.com/anshumrankawat" target="_blank" rel="noopener"
+                 class="text-sm text-primary-teal hover:underline">View Projects</a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
   </main>
 
-  <!-- FOOTER -->
-  <footer class="bg-slate-900 text-white mt-12">
+  <!-- FOOTER (removed “PhD Candidate & AI Reliability Engineer”) -->
+  <footer class="bg-gray-900 text-white mt-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
-      <p class="text-sm text-slate-300">
-        © <span id="year"></span> Anshum Rankawat • Research Portfolio
+      <p class="text-sm text-gray-400">
+        Anshum Rankawat Portfolio | Trustworthy AI • UQ & Calibration • Reliability-Aware Autonomy
       </p>
     </div>
   </footer>
 
   <!-- JS -->
   <script>
-    // year
-    document.getElementById("year").textContent = new Date().getFullYear();
-
     // smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener("click", (e) => {
-        const targetId = a.getAttribute("href");
-        const target = document.querySelector(targetId);
-        if (!target) return;
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const id = this.getAttribute('href');
+        const el = document.querySelector(id);
+        if (!el) return;
         e.preventDefault();
-        target.scrollIntoView({ behavior: "smooth" });
+        el.scrollIntoView({ behavior: 'smooth' });
 
-        // close mobile menu after click
-        const menu = document.getElementById("mobile-menu");
-        if (menu && !menu.classList.contains("hidden")) {
-          menu.classList.add("hidden");
-        }
+        // close mobile menu
+        const panel = document.getElementById('mobile-menu-panel');
+        if (panel && !panel.classList.contains('hidden')) panel.classList.add('hidden');
       });
     });
 
     // mobile menu toggle
-    const btn = document.getElementById("mobile-menu-button");
-    const menu = document.getElementById("mobile-menu");
-    if (btn && menu) {
-      btn.addEventListener("click", () => {
-        menu.classList.toggle("hidden");
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobilePanel = document.getElementById('mobile-menu-panel');
+    if (mobileMenuButton && mobilePanel) {
+      mobileMenuButton.addEventListener('click', () => {
+        mobilePanel.classList.toggle('hidden');
       });
     }
   </script>
+
 </body>
 </html>
